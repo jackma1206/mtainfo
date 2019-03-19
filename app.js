@@ -72,20 +72,12 @@ app.post("/landing", function(req, res) {
   address = req.body.address;
   address = address.split(" ").join("+");
 
-  // mapquest key BgwFUwZSUx5WJZPlYZdLaCqxjI0sYnkf
   const findLocation = {
     url:
       "http://www.mapquestapi.com/geocoding/v1/address?key=BgwFUwZSUx5WJZPlYZdLaCqxjI0sYnkf&location=" +
       address,
     method: "GET"
   };
-  // console.log(findLocation.url);
-  // request(findLocation, function(err, res, body) {
-  //   let json = JSON.parse(body);
-  //   console.log(json);
-  //   lat = json.results[0].geometry.location.lat;
-  //   long = json.results[0].geometry.location.lng;
-  // });
 
   //find all stop locations based on long and lat
 
@@ -238,20 +230,3 @@ app.listen(process.env.PORT || 3000, function() {
 
 // get arrival time
 //json.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
-
-//find nearest bus times at stop location
-
-// for (let q1 = 0; q1 < stops.length; q1++) {
-//   findTime.url = originalUrl + stops[q1].refCode;
-//   console.log(findTime.url);
-//   request(findTime, function(err, res, body) {
-//       let json = JSON.parse(body);
-//       let expected = json.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
-//       let arrivalTime = parseTime(expected);
-//       let arrivalDate = toDate(arrivalTime, 'h:m');
-//       let nowDate = new Date();
-//       let coming = eta(nowDate, arrivalDate);
-//       stops[q1].routes[0].comings = coming;
-//       console.log(stops[q1]);
-//   });
-// }
