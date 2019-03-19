@@ -4,7 +4,7 @@
   "description": "Dashboard showing ETA of MTA buses, trains and Uber/Lyft drivers available around a certain area.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Jack Ma",
   "license": "MIT",
