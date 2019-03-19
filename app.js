@@ -147,10 +147,7 @@ app.post("/landing", function(req, res) {
         urls.push(originalUrl + stops[q1].refCode);
       }
 
-      /* Works as of Node 7.6 */
       async function getParallel() {
-        //transform requests into Promises, await all
-
         let data = await Promise.all(urls.map(requestAsync));
 
         for (let index = 0; index < data.length; index++) {
